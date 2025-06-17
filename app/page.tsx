@@ -467,12 +467,13 @@ export default function Home() {
 			const bodies = physicsEngine.current.getBodies();
 
 			bodies.forEach(body => {
-				body.vx = 1.2 * (Math.random() - 0.5);
-				body.vy = 1.2 * (Math.random() - 0.5);
+				console.log('entropy');
+				body.vx *= (0.8 * Math.random()) + 0.8;
+				body.vy *= (0.8 * Math.random()) + 0.8;
 			});
 		}
 
-		entropyRef.current = setInterval(applyEntropy, 1000 * 15);
+		entropyRef.current = setInterval(applyEntropy, 1000 * 3);
 
 		return () => {
 			if (entropyRef.current !== null) {

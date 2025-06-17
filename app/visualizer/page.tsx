@@ -14,11 +14,8 @@ interface ColorBlob {
 	baseRadius: number;
 }
 
-interface PageProps {
-	searchParamsPromise: { [key: string]: string[] };
-}
 
-export default function ColorPaletteGenerator({ searchParamsPromise }: PageProps) {
+export default function ColorPaletteGenerator() {
 	const searchParams = useSearchParams();
 
 	const canvasRef = useRef<HTMLCanvasElement>(null);
